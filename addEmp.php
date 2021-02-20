@@ -57,14 +57,8 @@
 </form> 
 </center>
 <div>
-    <a href="empRecord.php">Check Database</a>
+	<button><a href="empRecord.php">Check Database</a></button>
 </div>
-
-<!--
-<div>
-<a href="C:/xampp/htdocs/EmpManagement/templates/searchEmployee.html">Search Record </a>
-</div>
--->
 
 </body>
 </html>

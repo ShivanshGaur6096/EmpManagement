@@ -32,7 +32,7 @@ table {
 </head>
 <body>
 <div>
-	<button><a href="employeedata.php">Search Record</a></button>
+	<button><a href="searchEmp.php">Search Record</a></button>
 </div>
     <br><br>
     <div>

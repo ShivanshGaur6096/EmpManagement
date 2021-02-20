@@ -86,19 +86,10 @@
     <input type="submit" name="submit" value="Update Record">
 </form> 
 </center>
-<div>
-    <a href="empRecord.php">Check Database</a>
-</div>
-
-
-
-<!--
-    <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
-<button onclick="window.location.href='C:/xampp/htdocs/EmpManagement/templates/searchEmployee.html'"class="btn-sec" style="vertical-align:mclassdle"><span>Search Employee</span></button>
 
 <div>
-<a href="C:/xampp/htdocs/EmpManagement/templates/searchEmployee.html">Search Record </a>
+	<button><a href="empRecord.php">Check Database</a></button>
 </div>
--->
+
 </body>
 </html>
