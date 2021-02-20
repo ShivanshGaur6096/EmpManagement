@@ -36,8 +36,10 @@
 </div>
 <br><br>
 <form action="" method="POST">
-<label>Search</label>
-<input type="text" name="search" placeholder="Search by Name">
+<label>Search</label><br><br>
+<input type="text" name="searchByName" placeholder="Search by Name">
+<br>OR<br>
+<input type="number" min="1001" name="searchByID" placeholder="Search by ID">
 <input type="submit" name="findRecord">
 	
 </form>
@@ -49,12 +51,13 @@
 $con = new PDO("mysql:host=localhost;dbname=empdata",'root','');
 
 if (isset($_POST["findRecord"])) {
-	$str = $_POST["search"];
-    $sth = $con->prepare("SELECT * FROM employee WHERE empName = '$str'");
+	$byName = $_POST["searchByName"];
+	$byID = $_POST["searchByID"];
+    $sth = $con->prepare("SELECT * FROM employee WHERE empName = '$byName' OR empid = '$byID'");
     
     
 
-	$sth->setFetchMode(PDO:: FETCH_OBJ);
+	$sth -> setFetchMode(PDO:: FETCH_OBJ);
 	$sth -> execute();
 
 	if($row = $sth->fetch())
