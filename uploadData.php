@@ -59,23 +59,31 @@ table {
 
 </head>
 <body>
-<div>
-	<button><a href="searchEmp.php">Search Record</a></button>
+<header>
+<div class="topnav"> 
+  <a class="active" href="#uploadData.php">Import Data</a>
+  <a href="empRecord.php">Employee Table</a>
+  <a href="searchEmp.php">Search Record</a>
+  <a href="addEmp.php">Add Record</a>
+  <a href="exportData.php">Export Data</a>
+  <a href="logout.php">Logout</a>
+
 </div>
+    </header>
+<link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">
 
 	<div class="container">
-		<th>Employee List</th>
+		
 	</div>
 
 	<div class="row">
-		<!-- form for uploading csv file -->
+		<!-- form for uploading csv file --><br>
 		<form action="importData.php" method="post" enctype="multipart/form-data">
 			<input type="file" name="file">
 			<input type="submit" name="importSubmit" value="UploadFile">
-
 		</form>
 
-
+        <h1>Employee List</h1>
 		<!-- table for listing data-->
 		<table class="table table-striped table-bordered">
         <thead class="thead-dark">
@@ -113,16 +121,12 @@ table {
             </tr>
         <?php } }else{ ?>
             <tr><td colspan="7">No member(s) found...</td></tr>
-        <?php } 
-
-
+        <?php 
+        }
 			  ?>
 		</tbody>
 		</table>
 	</div>
 
-    <div>
-	<button><a href="empRecord.php">Employee Table</a></button>
-</div>
 </body>
 </html>

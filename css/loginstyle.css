@@ -1,6 +1,5 @@
 body {
-	background: #1690A7;
-	display: flex;
+	background-image: linear-gradient(-90deg ,#00c7ff, #11caff, #49d6ff, #70deff, #8ce6ff, #c4f2ff, #a0e0ff, #6bcfff, #38bfff, #00aeff);	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;

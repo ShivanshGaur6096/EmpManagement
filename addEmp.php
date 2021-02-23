@@ -3,12 +3,20 @@
         <title>addRecord</title>
     </head>
 <body>
-<div>
-	<button><a href="empRecord.php">Check Database</a></button>
+<header>
+<div class="topnav">
+  <a class="active" href="#addEmp.php">Add Employee</a>
+  <a href="searchEmp.php">Search Record</a>
+  <a href="empRecord.php">Employee Record</a>
+  <a href="exportData.php">Export Data</a>
+  <a href="uploadData.php">Import Data</a>
+  <a href="logout.php">Logout</a>
+
 </div>
-<link rel="stylesheet" type="text/css" href="css/addEmpstyle.css">
+    </header>
+<link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">
 <center>
-<div class="main">
+<div class="box">
 <h2>Employee Register</h2>
 <form action="" method="POST">
     <label for="empid">Employee ID</label><br>

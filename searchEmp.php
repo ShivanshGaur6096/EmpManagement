@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>searchEmp</title>
-	<link rel="stylesheet" type="text/css" href="css/searchEmpstyle.css">
+	<link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">
 	<style>
 		td,
 		th,
@@ -20,11 +20,18 @@
 
 </head>
 <body>
-<div>
-	<button><a href="empRecord.php">Employee Table</a></button>
-</div>
+<header>
+<div class="topnav">
+  <a class="active" href="#searchEmp.php">Search Record</a>
+  <a href="empRecord.php">Employee Table</a>
+  <a href="exportData.php">Export Data</a>
+  <a href="uploadData.php">Import Data</a>
+  <a href="logout.php">Logout</a>
 
-<div align="center" class="main">
+</div>
+    </header>
+
+<div align="center" class="box">
      <link rel="stylesheet" type="text/css" href="css/searchEmpstyle.css">
 
 <form method="POST">

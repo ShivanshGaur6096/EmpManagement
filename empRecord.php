@@ -9,23 +9,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 
 <body>
-    <header>
-            <div>
-                <button><a href="searchEmp.php">Search Record</a></button>
-            </div><br>
-            <div>
-                <button><a href="addEmp.php">Add Record</a></button>
-            </div><br>
-            <div>
-                <button><a href="exportData.php">Export Data</a></button>
-            </div><br>
-            <div>
-                <button><a href="uploadData.php">Import Data</a></button>
-            </div>
+<header>
+<div class="topnav">
+  <a class="active" href="#empRecord.php">Employee Table</a>
+  <a href="searchEmp.php">Search Record</a>
+  <a href="addEmp.php">Add Record</a>
+  <a href="exportData.php">Export Data</a>
+  <a href="uploadData.php">Import Data</a>
+  <a href="logout.php">Logout</a>
+
+</div>
     </header>
     <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
-     <a href="logout.php">Logout</a>
 <div>
+
 <h1>List of Employee</h1>
 </div>
 

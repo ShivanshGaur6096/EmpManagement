@@ -1,18 +1,3 @@
-<html>
-    <head>
-        <title>editRecord</title>
-    </head>
-<body>
-<div>
-	<button><a href="empRecord.php">Check Database</a></button>
-</div><br>
-<link rel="stylesheet" type="text/css" href="css/editDetailstyle.css">
-<center>
-<h2>Edit Employee</h2>
-
-<div class="main">
-<form action="" method="POST">
-    
 <?php
                         include 'connDB.php';
 
@@ -59,6 +44,31 @@
 
                         }
                         ?>
+<html>
+    <head>
+        <title>editRecord</title>
+    </head>
+<body>
+<header>
+<div class="topnav"> 
+  <a class="active" href="#editDetail.php">Edit Detail</a>
+  <a href="empRecord.php">Employee Table</a>
+  <a href="searchEmp.php">Search Record</a>
+  <a href="addEmp.php">Add Record</a>
+  <a href="uploadData.php">Import Data</a>
+  <a href="exportData.php">Export Data</a>
+  <a href="logout.php">Logout</a>
+
+</div>
+    </header>
+<link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">
+<center>
+<h2>Edit Record of <?php echo $printData['empName'] ?></h2>
+
+<div class="box">
+<form action="" method="POST">
+    
+
 
 
     <label for="empid">Employee ID</label><br>
