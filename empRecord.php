@@ -1,48 +1,36 @@
+<?php
+session_start();
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+?>
 <html>
 <head>
-    <title>empRecord</title>
-<style>
-td,
-th,
-caption {
-  border: 1px solid black;
-  padding: .3em font-weight: bold;
-  font-size: 125%;
-}
-caption {
-  background-color: gray;
-  color: #fff
-}
-th,
-tr {
-  text-align:center;
-  font-size: 24px;
-  font-family: Futura, 'Trebuchet MS', Arial, sans-serif
-}
-tr:hover {
-  background-color: #f5f5f5
-}
-table {
-  border: 1px solid #000;
-  width: 100%
-}
-</style>
-
-
+<title>Employee Record</title>
+<link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">
 </head>
-<body>
-<div>
-	<button><a href="searchEmp.php">Search Record</a></button>
-</div>
-    <br><br>
-    <div>
-        <center><h1>List of Employee</h1></center>
-    </div>
 
-    <div>
-        <heading>
-        <div class='center'>
-        <div class='table'>
+<body>
+    <header>
+            <div>
+                <button><a href="searchEmp.php">Search Record</a></button>
+            </div><br>
+            <div>
+                <button><a href="addEmp.php">Add Record</a></button>
+            </div><br>
+            <div>
+                <button><a href="exportData.php">Export Data</a></button>
+            </div><br>
+            <div>
+                <button><a href="uploadData.php">Import Data</a></button>
+            </div>
+    </header>
+    <h1>Hello, <?php echo $_SESSION['name']; ?></h1>
+     <a href="logout.php">Logout</a>
+<div>
+<h1>List of Employee</h1>
+</div>
+
+<div>
+    <div class='table'>
             <table>
                 <thead>
                     <tr>
@@ -90,25 +78,23 @@ table {
                                 </button></a>
                             </td>
                         </tr>
-                                <?php
+                        <?php
 
-                            }
+                        }
                         ?>
                 </tbody>
             </table>
-        </div>
-        </div>
-    </div>
-
-    <br><br>
-
-    <div>
-        <button><a href="addEmp.php">Add Record</a></button>
-    </div>
+    </div>    
+</div>
 
 </body>
 </html>
-
+<?php
+}
+else{
+    echo "error";
+}
+?>
 
 
 

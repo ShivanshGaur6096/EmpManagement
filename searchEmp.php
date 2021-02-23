@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>searchEmp</title>
+	<link rel="stylesheet" type="text/css" href="css/searchEmpstyle.css">
 	<style>
 		td,
 		th,
@@ -12,21 +13,9 @@
 		}
 		caption {
 		background-color: gray;
-		color: #fff
+		color: #009879
 		}
-		th,
-		tr {
-		text-align:center;
-		font-size: 24px;
-		font-family: Futura, 'Trebuchet MS', Arial, sans-serif
-		}
-		tr:hover {
-		background-color: #f5f5f5
-		}
-		table {
-		border: 1px solid #000;
-		width: 100%
-		}
+		
 	</style>
 
 </head>
@@ -34,23 +23,26 @@
 <div>
 	<button><a href="empRecord.php">Employee Table</a></button>
 </div>
-<br><br>
-<form action="" method="POST">
-<label>Search</label><br><br>
+
+<div align="center" class="main">
+     <link rel="stylesheet" type="text/css" href="css/searchEmpstyle.css">
+
+<form method="POST">
+<label>Search</label><br>
 <input type="text" name="searchByName" placeholder="Search by Name">
 <br>OR<br>
-<input type="number" min="1001" name="searchByID" placeholder="Search by ID">
+<input type="number" min="1001" name="searchByID" placeholder="Search by ID"><br><br>
 <input type="submit" name="findRecord">
 	
 </form>
-
+</div>
 
 
 <?php
 
 $con = new PDO("mysql:host=localhost;dbname=empdata",'root','');
 
-if (isset($_POST["findRecord"])) {
+if(isset($_POST["findRecord"])) {
 	$byName = $_POST["searchByName"];
 	$byID = $_POST["searchByID"];
     $sth = $con->prepare("SELECT * FROM employee WHERE empName = '$byName' OR empid = '$byID'");
@@ -106,17 +98,17 @@ if (isset($_POST["findRecord"])) {
 	}
 		
 		
-		else{
-			?>
-			<script>
-			alert("Record Does Not Exist");
-            </script>
-			<br><br>
-			<div>
-	<button><a href="addEmp.php">Add Record</a></button>
-	</div>			
-			<?php
-		}
+	else{
+		?>
+		<script>
+		alert("Record Does Not Exist");
+		</script>
+		<br><br>
+		<div>
+		<button><a href="addEmp.php">Add Record</a></button>
+		</div>			
+		<?php
+	}
 
 
 }

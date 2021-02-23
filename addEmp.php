@@ -1,11 +1,14 @@
 <html>
     <head>
         <title>addRecord</title>
-        <? include 'style.css'?>
     </head>
 <body>
-
+<div>
+	<button><a href="empRecord.php">Check Database</a></button>
+</div>
+<link rel="stylesheet" type="text/css" href="css/addEmpstyle.css">
 <center>
+<div class="main">
 <h2>Employee Register</h2>
 <form action="" method="POST">
     <label for="empid">Employee ID</label><br>
@@ -56,9 +59,6 @@
   <input type="submit" name="addEmplyee" value="Add Employee">
 </form> 
 </center>
-<div>
-	<button><a href="empRecord.php">Check Database</a></button>
-</div>
 
 </body>
 </html>

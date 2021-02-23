@@ -1,12 +1,16 @@
 <html>
     <head>
         <title>editRecord</title>
-        <? include 'style.css'?>
     </head>
 <body>
-
+<div>
+	<button><a href="empRecord.php">Check Database</a></button>
+</div><br>
+<link rel="stylesheet" type="text/css" href="css/editDetailstyle.css">
 <center>
-<h2>Employee Register</h2>
+<h2>Edit Employee</h2>
+
+<div class="main">
 <form action="" method="POST">
     
 <?php
@@ -86,9 +90,6 @@
     <input type="submit" name="submit" value="Update Record">
 </form> 
 </center>
-
-<div>
-	<button><a href="empRecord.php">Check Database</a></button>
 </div>
 
 </body>
