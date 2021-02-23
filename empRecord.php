@@ -92,7 +92,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 <?php
 }
 else{
-    echo "error";
+    header("Location: userLogin.php");
+    exit();
 }
 ?>
 
