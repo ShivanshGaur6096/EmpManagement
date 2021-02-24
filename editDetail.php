@@ -57,7 +57,7 @@
   <a href="addEmp.php">Add Record</a>
   <a href="uploadData.php">Import Data</a>
   <a href="exportData.php">Export Data</a>
-  <a href="logout.php">Logout</a>
+  <a href="logout.php" style="float:right;">Logout</a>
 
 </div>
     </header>

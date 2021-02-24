@@ -1,13 +1,11 @@
 <?php
-// Load the database configuration file
 include 'connDB.php';
 
 if(isset($_POST['importSubmit'])){
     
-    // Allowed mime types
-    $csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 'application/octet-stream', 
+    $csvMimes = array('text/x-comma-separated-values', 'text/comma-separated-values', 
     'application/vnd.ms-excel', 'application/x-csv', 'text/x-csv', 'text/csv', 'application/csv', 'application/excel', 
-    'application/vnd.msexcel', 'text/plain');
+    'application/vnd.msexcel');
     
     // Validate whether selected file is a CSV file
     if(!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'], $csvMimes)){
@@ -18,7 +16,7 @@ if(isset($_POST['importSubmit'])){
             // Open uploaded CSV file with read-only mode
             $csvFile = fopen($_FILES['file']['tmp_name'], 'r');
             
-            // Skip the first line
+            // Skip the first column
             fgetcsv($csvFile);
             
             // Parse data from CSV file line by line
@@ -48,8 +46,13 @@ if(isset($_POST['importSubmit'])){
             $qstring = '?status=succ';
         }else{
             $qstring = '?status=err';
+            header("Location: uploadData.php".$qstring);
+           
         }
     }else{
         $qstring = '?status=invalid_file';
+        header("Location: uploadData.php".$qstring);
+        
     }
 }
+?>

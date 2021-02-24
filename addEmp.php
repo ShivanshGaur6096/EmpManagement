@@ -10,8 +10,7 @@
   <a href="empRecord.php">Employee Record</a>
   <a href="exportData.php">Export Data</a>
   <a href="uploadData.php">Import Data</a>
-  <a href="logout.php">Logout</a>
-
+  <a href="logout.php" style="float:right;">Logout</a>
 </div>
     </header>
 <link rel="stylesheet" type="text/css" href="css/empRecordstyle.css">

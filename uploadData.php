@@ -2,33 +2,12 @@
 
 include'connDB.php';
 
-
-if(!empty($_GET['status'])){
-    switch($_GET['status']){
-        case 'succ':
-            $statusType = 'alert-success';
-            $statusMsg = 'Employee data has been imported successfully.';
-            break;
-        case 'err':
-            $statusType = 'alert-danger';
-            $statusMsg = 'Some problem occurred, please try again.';
-            break;
-        case 'invalid_file':
-            $statusType = 'alert-danger';
-            $statusMsg = 'Please upload a valid CSV file.';
-            break;
-        default:
-            $statusType = '';
-            $statusMsg = '';
-    }
-}
-
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ImportCsvFile</title>
+	<title>Import File</title>
 
     <style>
 td,
@@ -66,7 +45,7 @@ table {
   <a href="searchEmp.php">Search Record</a>
   <a href="addEmp.php">Add Record</a>
   <a href="exportData.php">Export Data</a>
-  <a href="logout.php">Logout</a>
+  <a href="logout.php" style="float:right;">Logout</a>
 
 </div>
     </header>
@@ -77,12 +56,13 @@ table {
 	</div>
 
 	<div class="row">
+    <div align="center">
 		<!-- form for uploading csv file --><br>
 		<form action="importData.php" method="post" enctype="multipart/form-data">
 			<input type="file" name="file">
 			<input type="submit" name="importSubmit" value="UploadFile">
 		</form>
-
+    </div>
         <h1>Employee List</h1>
 		<!-- table for listing data-->
 		<table class="table table-striped table-bordered">
@@ -102,7 +82,7 @@ table {
 
 
         // Get employee rows
-        $sql = ("SELECT * FROM employee LIMIT 3 ");
+        $sql = ("SELECT * FROM employee order by empid desc LIMIT 10 ");
         $result=$conn->query($sql);
 
 		//$result = $db->query("SELECT * FROM employee");
